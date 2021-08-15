@@ -5,6 +5,7 @@ const int WIN_COMBINATIONS = 8;
 const int DIMENSION = 3;
 
 void printBoard(int board[3][3]);
+bool isValidMove(int board[3][3], int row, int col);
 
 int main() {
 	
@@ -20,6 +21,22 @@ int main() {
 		{ {0,0 }, { 1,1 }, { 2,2 } },
 		{ {0,2 }, { 1,1 }, { 2,0 } },
 	};
+
+	cout << "Enter the row and col coordinates for the next move: ";
+	int row, col;
+	cin >> row >> col;
+	char currentBoardPiece = board[row][col];
+	cout << "You entered row: " << row << ", col: " << col << " [debug] board value: " << currentBoardPiece << endl;
+	if (isValidMove(board, row, col)) {
+		board[row][col] = 'o';
+	}
+	else {
+		cout << "Invalid move: please enter valid row and col values.\n";
+	}
+	printBoard(board);
+
+	/*
+	* Win Checking Code
 	for (int i = 0; i < WIN_COMBINATIONS; i++) {
 		char currentChoice = board[winConditions[i][0][0]][winConditions[i][0][1]];
 		bool isWinner = true;
@@ -36,6 +53,16 @@ int main() {
 			cout << "We have a winner!! The " << currentChoice << " player wins!" << endl;
 		}
 	}
+	*/
+}
+
+
+bool isValidMove(int board[3][3], int row, int col) {
+	if ((row >= 0 && row < 3) && (col >= 0 && col < 3)) {
+		char currentBoardSelection = board[row][col];
+		return currentBoardSelection == '.';
+	} 
+	return false;
 }
 
 void printBoard(int board[3][3]) {
