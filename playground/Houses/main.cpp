@@ -14,5 +14,8 @@ int main()
 
 	myHouse.printHouseData();
 	yourHouse.printHouseData();
+	House testHouse("light green", 3, 14);
+	testHouse.printHouseData();
+
 	return 0;
 }

@@ -1,6 +1,16 @@
 #include "House.h"
 #include <iostream>
 
+
+House::House(string color, int numStories, int numWindows) : color(color), numStories(numStories), numWindows(numWindows){}
+
+House::House()
+{
+	color = "white";
+	numStories = 1;
+	numWindows = 4;
+}
+
 void House::setNumStories(int numStories) {
 	this->numStories = numStories;
 }

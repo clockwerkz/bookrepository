@@ -7,6 +7,8 @@ using namespace std;
 
 class House {
 public:
+	House(string color, int numStories, int numWindows);
+	House();
 	//setters
 	void setNumStories(int numStories);
 	void setNumWindows(int numWindows);
