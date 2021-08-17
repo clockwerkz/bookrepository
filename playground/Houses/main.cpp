@@ -35,7 +35,7 @@ class House {
 		string color;
 };
 
-void printHouseData(House &house);
+void printHouseData(const House &house);
 
 int main()
 {
@@ -54,7 +54,7 @@ int main()
 	return 0;
 }
 
-void printHouseData(House &house) {
+void printHouseData(const House &house) {
 	cout << "This house is " << house.getColor() << " and has "
 		<< house.getNumStories() << " stories and "
 		<< house.getNumWindows() << " windows." << endl;
