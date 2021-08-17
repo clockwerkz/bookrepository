@@ -2,7 +2,7 @@
 #include <vector>
 #include "Book.h"
 #include "BankAccount.h"
-
+#include "Pizza.h"
 using namespace std;
 
 int main() {
@@ -37,6 +37,18 @@ int main() {
 	//	cout << account.GetOwner() << "'s balance is: " << account.GetBalance() << endl;
 	//	cout << "-------------\n\n";
 	//}
-
+	Pizza pizza{ "The Works", 20, 18 };
+	pizza.AddTopping("cheese");
+	pizza.PrintToppings();
+	pizza.AddTopping("pepperoni");
+	pizza.AddTopping("mushroom");
+	pizza.AddTopping("onion");
+	pizza.PrintToppings();
+	Pizza garden{ "Garden Veggie", 22, 18 };
+	garden.AddTopping("onion");
+	garden.AddTopping("green peppers");
+	garden.AddTopping("black olives");
+	garden.AddTopping("tomatoes");
+	garden.PrintToppings();
 	return 0;
 }

@@ -19,4 +19,4 @@ class BankAccount {
 		int balance;
 };
 
-#endif BANK_ACCOUNT_H
+#endif 

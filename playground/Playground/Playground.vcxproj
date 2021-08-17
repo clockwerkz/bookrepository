@@ -141,11 +141,13 @@
   <ItemGroup>
     <ClInclude Include="BankAccount.h" />
     <ClInclude Include="Book.h" />
+    <ClInclude Include="Pizza.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="BankAccount.cpp" />
     <ClCompile Include="Book.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Pizza.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
