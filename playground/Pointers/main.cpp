@@ -1,5 +1,6 @@
 #include <iostream>
 #include "Rectangle.h"
+#include "Circle.h"
 
 using namespace std;
 
@@ -32,7 +33,24 @@ int main() {
 	//delete[] arr;
 	//arr = nullptr;
 
-	Rectangle* rectangles[3];
+	cout << "How many circles are you creating? ";
+	int numCircles;
+	cin >> numCircles;
+
+	Circle** circles = new Circle * [numCircles];
+	for (int i = 0; i < numCircles; i++) {
+		double radius;
+		cout << "Circle #" << i + 1 << "- please enter the radius: ";
+		cin >> radius;
+		circles[i] = new Circle(radius);
+	}
+	for (int i = 0; i < numCircles; i++) {
+		cout << "Circle #" << i + 1 << ", circumferenece: " << circles[i]->circumference() << ", area: " << circles[i]->area() << endl;
+		delete circles[i];
+	}
+
+	delete circles;
+	/*Rectangle* rectangles[3];
 	rectangles[0] = new Rectangle(5, 3);
 	rectangles[1] = new Rectangle(4, 4);
 	rectangles[2] = new Rectangle(10, 2);
@@ -42,7 +60,7 @@ int main() {
 		cout << "Rectangle #" << i + 1 << "-- Area: " << rectangles[i]->area() << ", perimeter: " << rectangles[i]->perimeter() << "." << endl;
 		delete rectangles[i];
 		rectangles[i] = nullptr;
-	}
+	}*/
 	
 
 	double* dblPointer = new double(3.14 );
