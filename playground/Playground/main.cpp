@@ -37,7 +37,7 @@ int main() {
 	//	cout << account.GetOwner() << "'s balance is: " << account.GetBalance() << endl;
 	//	cout << "-------------\n\n";
 	//}
-	Pizza pizza{ "The Works", 20, 18 };
+	/*Pizza pizza{ "The Works", 20, 18 };
 	pizza.AddTopping("cheese");
 	pizza.PrintToppings();
 	pizza.AddTopping("pepperoni");
@@ -49,6 +49,8 @@ int main() {
 	garden.AddTopping("green peppers");
 	garden.AddTopping("black olives");
 	garden.AddTopping("tomatoes");
-	garden.PrintToppings();
+	garden.PrintToppings();*/
+
+
 	return 0;
 }
