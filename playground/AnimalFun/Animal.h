@@ -11,7 +11,7 @@ class Animal {
 		void SetName(std::string name);
 		double GetWeight() const;
 		void SetWeight(double weight);
-		std::string MakeNoise();
+		std::string MakeNoise() const;
 	private:
 		std::string name;
 		double weight;

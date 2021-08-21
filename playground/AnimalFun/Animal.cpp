@@ -13,6 +13,6 @@ double Animal::GetWeight() const {
 void Animal::SetWeight(double weight) {
 	this->weight = weight;
 };
-std::string Animal::MakeNoise() {
+std::string Animal::MakeNoise() const {
 	return "unknown";
 };
