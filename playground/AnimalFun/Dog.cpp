@@ -13,3 +13,7 @@ void Dog::DigHole() const {
 std::string Dog::MakeNoise() const {
 	return "Bark-Bark";
 };
+
+void Dog::ChaseCat() const {
+	std::cout << "Here, kitty kitty!" << std::endl;
+}
