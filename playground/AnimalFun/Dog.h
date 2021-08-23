@@ -9,6 +9,7 @@ class Dog : public Animal {
 		std::string GetBreed() const;
 		void DigHole() const;
 		std::string MakeNoise() const;
+		std::string Eat() const;
 		void ChaseCat() const;
 	private:
 		std::string breed;
