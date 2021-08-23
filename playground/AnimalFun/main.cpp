@@ -5,8 +5,10 @@
 using namespace std;
 
 int main() {
-	Animal* const animal = new Animal("Dog", 13.8);
-	Dog* const rover = new Dog("Rover", 30, "Labrador");
+	Animal* animal = new Animal("Dog", 13.8);
+	Dog* rover = new Dog("Rover", 30, "Labrador");
+	Animal* fido = new Dog("Fido", 50, "Golden Retriever");
+	cout << fido->GetName() << " make nosie: " << fido->MakeNoise() << endl;
 	cout << "Animal " << animal->GetName() << " weighs " << animal->GetWeight()
 		<< " and makes the sound of: " << animal->MakeNoise() << endl;
 	cout << "Dog " << rover->GetName() << " weighs " << rover->GetWeight()
@@ -15,6 +17,7 @@ int main() {
 	rover->ChaseCat();
 	delete animal;
 	delete rover;
-	//animal = nullptr; cannot set a const ptr to nullptr
+	animal = nullptr; 
+	rover = nullptr;
 	return 0;
 }
