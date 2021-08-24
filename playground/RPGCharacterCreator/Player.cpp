@@ -1,4 +1,5 @@
 #include "Player.h"
+#include "Race.h"
 
 Player::Player(string name, Race race, int hitPoints, int magicPoints) : name(name), race(race),
 hitPoints(hitPoints), magicPoints(magicPoints) {};
