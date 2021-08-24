@@ -1,5 +1,5 @@
 #ifndef PLAYER_H
-#define PLAYER
+#define PLAYER_H
 #include <string>
 #include "Race.h"
 

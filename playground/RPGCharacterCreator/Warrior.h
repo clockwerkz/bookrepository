@@ -5,11 +5,12 @@
 #include <string>
 
 class Warrior : public Player {
-	Warrior(std::string name, Race race) : Player(name, race, 200, 0) {};
+	public:
+		Warrior(std::string name, Race race) : Player(name, race, 200, 0) {};
 
-	std::string Attack() const {
-		return "I will destroy you with my sword, foul demon!";
-	}
+		std::string Attack() const {
+			return "I will destroy you with my sword, foul demon!";
+		}
 };
 
 #endif
