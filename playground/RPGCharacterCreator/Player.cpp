@@ -24,7 +24,7 @@ string Player::WhatRace() const {
 		return "Dwarf";
 		break;
 	case ORC:
-		return "Troll";
+		return "Orc";
 		break;
 	case TROLL:
 		return "Troll";

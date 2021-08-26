@@ -32,5 +32,11 @@
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Priest.h">
+      <Filter>Header Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Mage.h">
+      <Filter>Header Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
