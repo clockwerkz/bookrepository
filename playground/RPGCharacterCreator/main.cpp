@@ -8,39 +8,63 @@
 
 
 void PrintTest(Player* player);
-Player* GenerateNewCharacter();
+Player* GenerateNewCharacter(char classSelection);
 Race FindRace(char raceSelection);
+vector <Player*> GenerateRPGSquad();
+
+const vector <char> CLASSES{ 'W','w','P','p','M','m' };
+const vector <char> RACES{ 'O', 'o', 'H', 'h', 'E', 'e', 'T', 't', 'D', 'd' };
 
 int main() {
 
-	Player* inputPlayer = GenerateNewCharacter();
-	PrintTest(inputPlayer);
-	delete inputPlayer;
-
-	inputPlayer = nullptr;
+	vector <Player*> party = GenerateRPGSquad();
+	cout << "---------" << endl;
+	for (Player* player : party) {
+		PrintTest(player);
+		delete player;
+	}
+	party.clear();
 	return 0;
 }
 
-
-Player* GenerateNewCharacter() {
+vector <Player*> GenerateRPGSquad() {
 	char classSelection;
 	char raceSelection;
-	vector <char> classOptions{ 'W','w','P','p','M','m' };
-	vector <char> raceOptions{'O', 'o', 'H', 'h', 'E', 'e', 'T', 't', 'D', 'd'};
+	bool addingCharacters = true;
+	vector <Player*> party;
+	cout << "Welcome to the DnD Party generator! " << endl;
+	while (addingCharacters) {
+		cout << "Would you like to add a (W)arrior, (P)riest, (M)age, or (E)xit?: ";
+		cin >> classSelection;
+		if (classSelection == 'e' || classSelection == 'E') {
+			addingCharacters = false;
+			continue;
+		}
+		if (find(CLASSES.begin(), CLASSES.end(), classSelection) == CLASSES.end()) {
+			cout << "Please enter a valid class selection!\n";
+			continue;
+		 }
+		Player* newCharacter = GenerateNewCharacter(classSelection);
+		party.push_back(newCharacter);
+		cout << "Successfully added " << newCharacter->GetName() << " the " << newCharacter->WhatRace() << "!" << endl
+			<< "You have " << party.size() << " character(s) in your party." << endl;
+		
+	}
+	return party;
+}
+
+
+Player* GenerateNewCharacter(char classSelection) {
 	string name;
 	bool validChoice = false;
+	char raceSelection;
+		cin.ignore();
 		cout << "Enter the character's name: ";
 		getline(cin, name);
 	while (!validChoice) {
-		cout << "Is " << name << " a (W)arrior, (P)riest, or a (M)age?: ";
-		cin >> classSelection;
-		
 		cout << "What race is " << name << "?\n(H)human\n(E)lf\n(T)roll\n(D)warf\n(O)rc\n";
 		cin >> raceSelection;
-
-		validChoice = (find(classOptions.begin(), classOptions.end(), classSelection) != classOptions.end() &&
-			find(raceOptions.begin(), raceOptions.end(), raceSelection) != raceOptions.end());
-
+		validChoice = (find(RACES.begin(), RACES.end(), raceSelection) != RACES.end());
 		if (validChoice) {
 			switch (classSelection) {
 			case 'W':
@@ -55,7 +79,7 @@ Player* GenerateNewCharacter() {
 			}
 		}
 		else {
-			cout << "Invalid class and/or race selection: please try again!\n";
+			cout << "Invalid race selection: please try again!\n";
 		}
 	}
 	return nullptr;
