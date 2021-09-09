@@ -31,12 +31,16 @@ bool Rectangle::operator==(const Rectangle& other) const {
 	return length == other.length && width == other.width;
 };
 Rectangle Rectangle::operator+(const Rectangle& other) const {
-	double width = width + other.width;
-	double length = length + other.length;
+	double width = this->width + other.width;
+	double length = this->length + other.length;
 	Rectangle rect = Rectangle(length, width);
 	return rect;
 };
 void Rectangle::operator=(const Rectangle& other) {
 	width = other.width;
 	length = other.length;
+};
+
+bool Rectangle::operator!=(const Rectangle& other) const {
+	return length != other.length || width != other.width;
 };
