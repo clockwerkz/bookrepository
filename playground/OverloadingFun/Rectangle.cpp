@@ -28,15 +28,15 @@ double Rectangle::Perimeter() const{
 }
 
 bool Rectangle::operator==(const Rectangle& other) const {
-	return this->Area() == other.Area();
+	return length == other.length && width == other.width;
 };
 Rectangle Rectangle::operator+(const Rectangle& other) const {
-	double width = this->width + other.width;
-	int length = this->length + other.length;
+	double width = width + other.width;
+	double length = length + other.length;
 	Rectangle rect = Rectangle(length, width);
 	return rect;
 };
 void Rectangle::operator=(const Rectangle& other) {
-	this->width = other.width;
-	this->length = other.length;
+	width = other.width;
+	length = other.length;
 };
